@@ -1,0 +1,75 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Plessers et~al.(2018)Plessers, {Vanden Berghe}, {Van Dijck},
+  Wirix-Speetjens, Debeer, Jonkers, and {Vander Sloten}]{Plessers2018}
+K.~Plessers, P.~{Vanden Berghe}, C.~{Van Dijck}, R.~Wirix-Speetjens, P.~Debeer,
+  I.~Jonkers, and J.~{Vander Sloten}.
+\newblock {Virtual reconstruction of glenoid bone defects using a statistical
+  shape model}.
+\newblock \emph{Journal of Shoulder and Elbow Surgery}, 27\penalty0
+  (1):\penalty0 160--166, 2018.
+
+\bibitem[Plessers et~al.(2020)Plessers, Verhaegen, {Van Dijck},
+  Wirix-Speetjens, Debeer, Jonkers, and {Vander Sloten}]{Plessers2020}
+K.~Plessers, F.~Verhaegen, C.~{Van Dijck}, R.~Wirix-Speetjens, P.~Debeer,
+  I.~Jonkers, and J.~{Vander Sloten}.
+\newblock {Automated quantification of glenoid bone defects using 3-dimensional
+  measurements}.
+\newblock \emph{Journal of Shoulder and Elbow Surgery}, 29\penalty0
+  (5):\penalty0 1050--1058, 2020.
+
+\bibitem[{Van Dijck} et~al.(2014){Van Dijck}, Wirix-Speetjens, Huysmans,
+  Danckaers, Sijbers, and {Vander Sloten}]{VanDijck2014}
+C.~{Van Dijck}, R.~Wirix-Speetjens, T.~Huysmans, F.~Danckaers, J.~Sijbers, and
+  J.~{Vander Sloten}.
+\newblock {Influence of Correspondence Method on Statistical Model Based Shape
+  Prediction}.
+\newblock In \emph{Symposium on Statistical Shape Models {\&} Applications},
+  page 2014, 2014.
+
+\bibitem[{Van Dijck} et~al.(2015{\natexlab{a}}){Van Dijck}, Kerkhof, Vereecke,
+  Wirix-Speetjens, and {Vander Sloten}]{VanDijck2015b}
+C.~{Van Dijck}, F.~Kerkhof, E.~Vereecke, R.~Wirix-Speetjens, and J.~{Vander
+  Sloten}.
+\newblock {Segmentation of 4D CT Bone Images by Sequential Registration}.
+\newblock \emph{IEEE International Symposium on Biomedical Imaging}, pages
+  621--624, 2015{\natexlab{a}}.
+
+\bibitem[{Van Dijck} et~al.(2015{\natexlab{b}}){Van Dijck}, Wirix-Speetjens,
+  and {Vander Sloten}]{VanDijck2015}
+C.~{Van Dijck}, R.~Wirix-Speetjens, and J.~{Vander Sloten}.
+\newblock {Statistical Model-Based Partial Object Prediction in Distal Radius
+  Reconstruction}.
+\newblock In \emph{Proc. Comp. Methods in Biomech. and Biomed. Eng.},
+  2015{\natexlab{b}}.
+
+\bibitem[{Van Dijck} et~al.(2015{\natexlab{c}}){Van Dijck}, Wirix-Speetjens,
+  and {Vander Sloten}]{VanDijck2015a}
+C.~{Van Dijck}, R.~Wirix-Speetjens, and J.~{Vander Sloten}.
+\newblock {Multibody Shape Models for Distal Radius Reconstruction}.
+\newblock In \emph{Symposium on Statistical Shape Models {\&} Applications},
+  volume~17, page 2014, 2015{\natexlab{c}}.
+
+\bibitem[{Van Dijck} et~al.(2018){Van Dijck}, Wirix-Speetjens, Jonkers, and
+  {Vander Sloten}]{VanDijck2018a}
+C.~{Van Dijck}, R.~Wirix-Speetjens, I.~Jonkers, and J.~{Vander Sloten}.
+\newblock {Statistical shape model-based prediction of tibiofemoral cartilage}.
+\newblock \emph{Computer Methods in Biomechanics and Biomedical Engineering},
+  21\penalty0 (9):\penalty0 568--578, oct 2018.
+
+\bibitem[Wesseling et~al.(2019)Wesseling, Bosmans, {Van Dijck}, {Vander
+  Sloten}, Wirix-Speetjens, and Jonkers]{Wesseling2019a}
+M.~Wesseling, L.~Bosmans, C.~{Van Dijck}, J.~{Vander Sloten},
+  R.~Wirix-Speetjens, and I.~Jonkers.
+\newblock {Non-rigid deformation to include subject-specific detail in
+  musculoskeletal models of CP children with proximal femoral deformity and its
+  effect on muscle and contact forces during gait}.
+\newblock \emph{Computer Methods in Biomechanics and Biomedical Engineering},
+  22\penalty0 (4):\penalty0 376--385, 2019.
+
+\end{thebibliography}

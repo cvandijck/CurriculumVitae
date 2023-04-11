@@ -35,7 +35,7 @@
 % provides key-value class options via \DeclareOptionX
 \RequirePackage{xkeyval}
 % provides \ifnumgreater{<int expr.>}{<int expr.>}{<true>}{<false>},
-% \apptocmd{<command>}{<code>}{<success>}{<failure>} and \newtoggle{<name>}
+% {<command>}{<code>}{<success>}{<failure>} and \newtoggle{<name>}
 \RequirePackage{etoolbox}
 % provides basic conditional expressions
 \RequirePackage{ifthen}
@@ -257,7 +257,7 @@
 \newcommand*{\cvsection}[1]{\section*{#1}}
 \titleformat{\section}%
 	{\color{sectioncolor}\normalfont\bfseries\LARGE}{}{0pt}{}
-\titlespacing*{\section}{0pt}{1.5ex}{1ex}
+\titlespacing*{\section}{0pt}{2ex}{0ex}
 
 % grey subsection style for right column
 \newcommand*{\cvsubsection}[1]{\subsection*{#1}}
@@ -365,9 +365,9 @@
 		\begin{tikzpicture}[x=\profilepicsize, y=\profilepicsize]
 			\begin{scope}
 				\path[clip]
-					(0, 0) [sharp corners] --
+					(0, 0) [rounded corners=\profilepicrounding] --
 					(0, 1) [rounded corners=\profilepicrounding] --
-					(1, 1) [sharp corners] --
+					(1, 1) [rounded corners=\profilepicrounding] --
 					(1, 0) [rounded corners=\profilepicrounding] -- cycle;
 				\node[anchor=center, inner sep=0pt, xshift=\profilepicxshift,
 						yshift=\profilepicyshift] (profilepic) at (0.5, 0.5)
@@ -377,9 +377,9 @@
 			\ifdim \profilepicborderwidth > 0pt
 				\begin{scope}
 					\draw[line width=\profilepicborderwidth, color=iconcolor]
-					(0, 0) [sharp corners] --
+					(0, 0) [rounded corners=\profilepicrounding] --
 					(0, 1) [rounded corners=\profilepicrounding] --
-					(1, 1) [sharp corners] --
+					(1, 1) [rounded corners=\profilepicrounding] --
 					(1, 0) [rounded corners=\profilepicrounding] -- cycle;
 				\end{scope}
 			\fi
@@ -671,7 +671,7 @@
 		\nameandjob
 
 		% personal information
-		\vspace*{0.5em}
+		\vspace*{1em}
 		\begin{icontable}[1.6]{1.7em}{0.4em}
 			\personaldata
 		\end{icontable}
@@ -731,6 +731,19 @@
 			\hfill {\footnotesize#3} \\%
 			\textcolor{itemtextcolor}{#4}%\vspace{\parsep}%
 		\fi%
+	}\\
+}
+
+% | <date>         <bold-title>  \hfill  <location>  |
+% |                <italic-title>
+% |                <longer description>              |
+\newcommand{\cvitemlong}[5]{%
+	\parbox[t]{0.17\textwidth}{\raggedright #1} &%
+	\parbox[t]{0.81\textwidth}{%
+		\parbox[t]{\linewidth-\widthof{\footnotesize #4}-1em}{\raggedright \textbf{#2}}%
+		\hfill {\footnotesize#4} \\%
+		\textcolor{itemtextcolor}{\textit{#3}} \\%\vspace{\parsep}%
+		\textcolor{itemtextcolor}{#5}%\vspace{\parsep}%
 	}\\
 }
 

@@ -1,0 +1,392 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/PandaScience/FortySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors:
+% https://github.com/PandaScience/FortySecondsCV/graphs/contributors
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% 9pt,
+	sidesectionsize=Large,
+	% showframes,
+	% vline=2.2em,
+	maincolor=cvgreen,
+	sectioncolor=cvgreen,
+	% sidecolor=gray!50,
+	% sidetextcolor=green,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	topbottommargin=0.02\paperheight,
+	leftrightmargin=0.02\paperwidth,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	profilepiczoom=1.6,
+	profilepicxshift=-1mm,
+	profilepicyshift=-7mm,
+	profilepicrounding=0.5cm,
+	% logowidth=4.5cm,
+	% logospace=5mm,
+	% logoposition=before,
+	% sidebarplacement=right,
+]{fortysecondscv}
+
+% fine tune line spacing
+% \usepackage{setspace}
+% \setstretch{1.1}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+	% \newfontfamily\headingfont[Path=fonts/]{segoeuib.ttf} % use local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+\fi
+
+% use a sans serif font as default
+\usepackage[sfdefault]{ClearSans}
+% \usepackage[sfdefault]{noto}
+
+% multi-language CV XeLaTeX and polyglossia (should also work with LuaLaTeX)
+% NOTE: breaks \pointskill, \membership and some spacings
+% \ifxetexorluatex
+% 	\usepackage{polyglossia}
+% 	\newfontfamily\arabicfontsf[Script=Arabic,Scale=1.5]{Amiri}
+% 	\newfontfamily\englishfontsf{Clear Sans}
+% 	\setmainfont{Amiri}
+% 	\setdefaultlanguage{arabic}
+% 	\setotherlanguage{english}
+% \fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+\usepackage{natbib}
+\usepackage{bibentry}
+\nobibliography*
+
+\usepackage{enumitem}
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{\LARGE Christophe Van Dijck}
+% job title/career
+\cvjobtitle{Biomedical Engineer,\\[0.2em] Software Researcher}
+
+%% optional information
+% profile picture
+\cvprofilepic{pics/profile.jpeg}
+% logo picture
+%\cvlogopic{pics/logo_txt.png}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+\cvbirthday{August 2\textsuperscript{nd}, 1990}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{Vlierstraat~26, 9000 Gent}
+% phone number
+\cvphone{+32 485 40 33 70}
+% personal website
+%\cvsite{https://pandascience.net}
+% email address
+\cvmail{christophe.vdijck@gmail.com}
+% pgp key
+%\cvkey{4096R/FF00FF00}{0xAABBCCDDFF00FF00}
+% any other custom entry
+\cvcustomdata{\faFlag}{Belgian}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\newlength{\firstsidespacing}
+\setlength{\firstsidespacing}{3ex}
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/shiny/}}
+	
+	\vspace*{\firstsidespacing}%
+	\sidesection{About Me}
+	\aboutme{
+		Passionate about finding \emph{meaningful} innovation in a complex reality. Driven by continuous \emph{self-development}. Loves collaborating with \emph{inspired} people. 
+	}
+
+	% \vfill
+	% social network accounts incl. proper hyperlinks
+%	\sidesection{Social Network}
+%		\begin{icontable}{2.5em}{1em}
+%			\social{\faLinkedin}
+%				{https://www.linkedin.com/in/cvandijck/}
+%				{LinkedIn}
+%%			\social{\faGithub}
+%%				{https://github.com/cvandijck}
+%%				{Github}
+%		\end{icontable}
+
+	\vspace*{\firstsidespacing}
+	\sidesection{Hard Skills}
+		\skill{\faLightbulb}{Software research}
+		\skill{\faCogs}{Lean prototyping}
+		\skill{\faTerminal}{Software DevOps}
+		\skill{\faProjectDiagram}{Project management}
+
+	\vspace*{\firstsidespacing}
+	\sidesection{Soft Skills}
+		\skill{\faCrosshairs}{Result-oriented problem solver}
+		\skill{\faExclamationCircle}{Critical analytical thinker}
+		\skill{\faUsers}{Team leader}
+		\skill{\faComments}{Clear communicator}
+		
+	\vspace*{\firstsidespacing}
+	\sidesection{Languages}
+	\pointskill{\flag{NL.png}}{Dutch}{5}
+	\pointskill{\flag{GB.png}}{English}{4}
+	\pointskill{\flag{FR.png}}{French}{1}
+	
+	\vspace*{\firstsidespacing}
+}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\definecolor{pastelgreen}{HTML}{D7ECD9}
+\definecolor{pastelpurple}{HTML}{D5D6EA}
+\definecolor{pastelorange}{HTML}{F5D5CB}
+\definecolor{pastelyellow}{HTML}{F6F6EB}
+
+\newlength{\secondsidespacing}
+\setlength{\secondsidespacing}{3ex}
+\addtobacksidebar{
+	\vspace*{\secondsidespacing}
+	\sidesection{Programming}
+	\pointskill{\faPython}{Python}{5}
+	\pointskill{\includegraphics[align=c, width=1em]{pics/other/cpp_colored.pdf}}{C++}{3}
+	\pointskill{\includegraphics[align=c, width=1em]{pics/other/qt_colored.pdf}}{Qt}{3}
+	\pointskill{\includegraphics[align=c, width=1em]{pics/other/cmake_colored.pdf}}{CMake}{2}
+		
+	\vspace*{\secondsidespacing}
+	\sidesection{Computational Libraries}
+	\pointskill[-1.6em]{}{NumPy / SciPy}{5}
+	\pointskill[-1.6em]{}{Pandas}{4}
+	\pointskill[-1.6em]{}{ITK}{4}
+	\pointskill[-1.6em]{}{VTK}{4}
+	\pointskill[-1.6em]{}{TensorFlow / scikit-learn}{2}
+	
+	\vspace*{\secondsidespacing}
+	\sidesection{Other}
+	\pointskill[-1.6em]{}{Azure DevOps}{3}
+	\pointskill[-1.6em]{}{\LaTeX}{4}
+	\pointskill[-1.6em]{}{MS Office}{5}
+	
+	\vspace*{\secondsidespacing}
+	\sidesection{When I'm not working}
+	\aboutme{
+		As a new father, my main focus is taking care of my one year old son. In my spare time, you can find me in the climbing hall or playing mini-football. Soon, I hope to pick up some old hobbies again, such as woodworking, tinkering with Arduino and Raspberry Pis, and the yearly ski holidays.
+	}
+
+	\vspace*{8cm}
+	
+	\textcolor{maincolor}{References available upon request}
+	
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+\newlength{\firstpagespacing}
+\setlength{\firstpagespacing}{4ex}
+
+\vspace{\firstpagespacing}
+\cvsection{Working Experience}
+\vspace*{-1ex}
+\begin{cvtable}[3.5]
+	\cvitemlong{\emph{current} \\ Jan 2020}{Research Coordinator}{Craniomaxillofacial Surgery}{Materialise NV}%
+	{Define, scope and coordinate research projects within Materialise's CMF portfolio; identify collaboration opportunities with clinical centers; define and draft (externally funded) research proposals}
+	\cvitemlong{Feb 2021 \\ Nov 2018}{Research Team Leader}{Data-driven and Algorithmic Research}{Materialise NV}%
+	{People management of a team of junior and senior researchers specialized in machine/deep learning, computational geometry, shape modeling and augmented reality}
+	\cvitem{Nov 2018 \\ Jul 2013}{Research Engineer}{Materialise NV}%
+	{Software research in medical image processing and computational geometry to support Materialise's preoperative planning solutions}
+	\cvitem{Summer 2012}{Internship}{University Hospital Antwerp \\ \hspace*{\fill} Molecular Imaging Center Antwerp}%
+	{Maintenance and repair of medical devices of the intensive care unit; co-design calibration protocol using Fluke Patient Simulator; design of experimental set-up for deep brain stimulation using LabVIEW}
+\end{cvtable}
+
+\vspace{\firstpagespacing}
+\cvsection{Education}
+\vspace*{-1ex}
+\begin{cvtable}[3.5]	
+	\cvitemlong{2014 -- 2021}{PhD in Biomechanical Engineering}{Mass Personalisation of Preoperative Planning for TKA}{KU Leuven}
+	{Investigated the use of statistical shape models to predict patient-specific information to support mass personalisation of preoperative planning for total knee arthroplasty}
+	\cvitemlong{2011 -- 2013}{MSc in Biomedical Engineering}{3D Registration of MRI and US Brain Images in Premature Infants}{University Ghent - VUB Brussels}
+		{Focus on medical imaging, medical image processing and computational modelling. Graduated with honours}
+	\cvitemlong{2008 -- 2011}{BSc in Electrical Engineering}{Design of an Intelligent Outlet}{University Ghent}
+		{Graduated with honours}
+\end{cvtable}
+
+\vspace{\firstpagespacing}
+\cvsection{Additional Development}
+\vspace*{2ex}
+\begin{cvtable}[1.2]	
+	\cvitem{2019 - 2020}{Management Development Program}{Materialise - Synerguy}{}
+	\cvitem{2018}{Data Analytics for Lean Six Sigma}{Coursera - Amsterdam University}{}
+	\cvitem{2017}{Functional Management}{Materialise - Synerguy}{}
+	\cvitem{2017}{Effective Communication}{Materialise - BeTalent}{}
+	\cvitem{2016}{Machine Learning}{Coursera - Stanford University}{}
+	\cvitem{2015}{Academic Writing}{KU Leuven}{}
+	\cvitem{2014}{Musculoskeletal Modelling by Multibody Dynamics}{Aalborg University}{}
+	\cvitem{2014}{Design of Experiments}{Materialise - Amelior}{}
+	\cvitem{2013}{Experimental Design}{KU Leuven}{}
+\end{cvtable}
+\vspace{\firstpagespacing}
+
+\newpage
+\makebacksidebar
+% \newgeometry{
+% 	top=\topbottommargin,
+% 	bottom=\topbottommargin,
+% 	right=\leftrightmargin,
+% 	left=\leftrightmargin
+% }
+\newlength{\secondpagespacing}
+\setlength{\secondpagespacing}{3ex}
+\cvsection{Relevant Projects and Responsibilities}
+\cvsubsection{Research}
+\vspace*{-1ex}
+\footnotesize{
+\begin{cvtable}[1.5]
+	\cvitemshort{2013}{Defined own Baekeland PhD project. Drafted and successfully defended proposal to IWT (now VLAIO)}
+	\cvitemshort{2014 - 2018}{Doctoral research on predictive applications of statistical shape modelling for different preoperative planning solutions of Materialise Medical}
+	\cvitemshort{2015 - 2019}{Collaborated on X-ray-based preoperative planning for TKA and THA: 2D-to-3D shape extrapolation research, executing cadaver feasibility studies and supporting regulatory validation}
+	\cvitemshort{2017 - \emph{current}}{Co-defined and drafted several research project proposals on artificial intelligence and augmented reality at several national funding instruments including the VLAIO Baekeland PhD and Research project programs, and the imec.icon program. All but one were positively received with approved project funding}
+\end{cvtable}
+}
+
+\cvsubsection{Software DevOps}
+\vspace*{-1ex}	
+\footnotesize{
+\begin{cvtable}[1.5]
+	\cvitemshort{2016 - \emph{current}}{Created and maintained the internal Python-based research library building on scientific computing, (medical) image processing and visualisation libraries including numpy, scipy, TensorFlow, and custom builds of ITK and VTK}
+	\cvitemshort{2018 - \emph{current}}{Responsible for DevOps infrastructure of the medical research library: (auto-) testing, packaging and release management}
+	\cvitemshort{2021 - \emph{current}}{Responsible for Python-Based Applications: release of production-ready (mini-) applications based on python into internal processes or cloud-environments}
+\end{cvtable}
+}
+
+\cvsubsection{Team Leader}
+\vspace*{-1ex}
+\footnotesize{
+\begin{cvtable}[1.5]
+	\cvitemshort{2016 - 2021}{Evolved from functional management of three researchers (junior and senior) to people management of five researchers (junior and senior) working on data-driven or algorithmic research. Provide technical guidance and support personal development in both hard and soft skills}
+	\cvitemshort{2017 - \emph{current}}{Provide training opportunities for medical research team on python programming and software research using coding challenges and proof-of-concept days}
+	\cvitemshort{2018 - 2020}{Lead the development team behind our internal research library. Train members in software development best practices and tools, e.g. creating unit-testing pipelines and compiling our custom dependencies}
+\end{cvtable}
+}
+
+\cvsubsection{Project Management}
+\vspace*{-1ex}
+\footnotesize{
+	\begin{cvtable}[1.5]
+		\cvitemshort{2018 - \emph{current}}{Project coordination of 4 -- 10 concurrent internal and external research projects within the CMF portfolio. Define scope and frequently align with stakeholders (software development, process and clinical engineering teams). Functional management of several researchers working on the CMF-related research projects}
+		\cvitemshort{2021 - \emph{current}}{Project lead of the AIM imec.icon project: Automated Intraoperative Measurements for AR-Guided Surgery}
+	\end{cvtable}
+}
+
+
+\vspace{\secondpagespacing}
+\cvsection{Main Publications and Presentations}
+\vspace*{1ex}
+\begin{itemize}[leftmargin=*, label={}, itemsep=4pt]
+%	\footnotesize
+	\item \bibentry{VanDijck2014}
+	\item \bibentry{VanDijck2015b}
+	\item \bibentry{VanDijck2015}
+	\item \bibentry{VanDijck2015a}
+	\item \bibentry{VanDijck2018a}
+	\item \bibentry{Plessers2018}
+	\item \bibentry{Wesseling2019a}
+	\item \bibentry{Plessers2020}
+\end{itemize}
+
+%\cvsubsection{Publications in International Peer Reviewed Journals}
+%\begin{itemize}[leftmargin=*, label={}]
+%	\footnotesize
+%	\item \bibentry{VanDijck2018a}
+%	\item \bibentry{Plessers2018}
+%	\item \bibentry{Wesseling2019a}
+%	\item \bibentry{Plessers2020}
+%\end{itemize}
+%
+%\cvsubsection{Abstracts Presented at International Scientific Conferences}
+%\begin{itemize}[leftmargin=*, label={}]
+%	\footnotesize
+%	\item \bibentry{VanDijck2014}
+%	\item \bibentry{VanDijck2015b}
+%	\item \bibentry{VanDijck2015a}
+%	\item \bibentry{VanDijck2015d}
+%	\item \bibentry{VanDijck2015c}
+%\end{itemize}
+%
+%\cvsubsection{Patents}
+%\begin{itemize}[leftmargin=*, label={}]
+%	\footnotesize
+%	\item \bibentry{Wirix-Speetjens2018}
+%	\item \bibentry{Slagmolen2020}
+%\end{itemize}
+
+\bibliographystyle{abbrvnatclean}
+\nobibliography{my_pubs}
+
+\end{document}
