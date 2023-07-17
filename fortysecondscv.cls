@@ -49,6 +49,10 @@
 ]{geometry}
 
 % pre-define some colors the user can choose from
+\definecolor{cvprimary}{HTML}{32414E}
+\definecolor{cvsecondary}{HTML}{dbdac7}
+\definecolor{cvaccent}{HTML}{a99889}
+
 \definecolor{cvblue}{HTML}{0E5484}
 \definecolor{cvgreen}{HTML}{007170}
 \definecolor{cvred}{HTML}{8B0000}
