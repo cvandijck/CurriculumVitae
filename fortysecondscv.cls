@@ -1,5 +1,5 @@
 % FortySecondsCV LaTeX class
-% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Copyright © 2019-2022 René Wirnata <rene.wirnata@pandascience.net>
 % Licensed under the 3-Clause BSD License. See LICENSE file for details.
 %
 % Please visit https://github.com/PandaScience/FortySecondsCV for the most
@@ -150,6 +150,11 @@
 	}
 }
 
+% date column width
+\newlength\datecolwidth
+\setlength{\datecolwidth}{0.17\textwidth}
+\DeclareOptionX{datecolwidth}{\setlength{\datecolwidth}{#1}}
+
 % pass further options to base class and load it
 \DeclareOptionX*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptionsX\relax
@@ -192,6 +197,7 @@
 
 % provides X column type for automatic length calculations
 \RequirePackage{tabularx}
+\RequirePackage{longtable, tabu}
 
 % take care of compiler-specific packages
 \RequirePackage{ifluatex}
@@ -709,24 +715,37 @@
 % tabular starred version adds space to make table as wide as \textwidth here
 \newenvironment{cvtable}[1][1]{%
 	\renewcommand{\arraystretch}{#1}%
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%
+	% remove additional spacing before and after longtables
+	\setlength{\LTpre}{0pt}
+	\setlength{\LTpost}{0pt}
+	\iftoggle{tshowframes}{%
+		\begin{longtabu} to \textwidth {@{\extracolsep{\fill}}|l|l|}%
+		\hline%
+	}{%
+		\begin{longtabu} to \textwidth {@{\extracolsep{\fill}}ll}%
+	}
 }{%
-	\end{tabular*}%
+	\iftoggle{tshowframes}{%
+		\hline%
+		\end{longtabu}%
+	}{%
+		\end{longtabu}%
+	}
 }
 
 % | <keyword>      <one-line description>            |
 % use parbox if text needs to use multiple lines
 \newcommand{\cvitemshort}[2]{%
-	\parbox[t]{0.17\textwidth}{\raggedright #1}
-	& \parbox[t]{0.81\textwidth}{#2} \\}
+	\parbox[t]{\datecolwidth}{\raggedright #1}
+	& \parbox[t]{0.98\textwidth-\datecolwidth}{#2} \\}
 
 % | <date>         <bold-title>  \hfill  <location>  |
 % |                <longer description>              |
 % or, if description is empty:
 % | <date>         <title>       \hfill  <location>  |
 \newcommand{\cvitem}[4]{%
-	\parbox[t]{0.17\textwidth}{\raggedright #1} &%
-	\parbox[t]{0.81\textwidth}{%
+	\parbox[t]{\datecolwidth}{\raggedright #1} &%
+	\parbox[t]{0.98\textwidth-\datecolwidth}{%
 		\if\relax\detokenize{#4}\relax%
 			\parbox[t]{\linewidth-\widthof{\footnotesize #3}-1em}{\raggedright #2}%
 			\hfill {\footnotesize#3}%
@@ -756,8 +775,8 @@
 % or, if description is empty:
 % | <date>         <title>       \par\hfill  <location>  |
 \newcommand{\cvitempar}[4]{%
-	\parbox[t]{0.17\textwidth}{\raggedright #1} &%
-	\parbox[t]{0.81\textwidth}{%
+	\parbox[t]{\datecolwidth}{\raggedright #1} &%
+	\parbox[t]{0.98\textwidth-\datecolwidth}{%
 		\if\relax\detokenize{#4}\relax%
 			\parbox[t]{\textwidth}{\raggedright #2}%
 			\par\hfill {\footnotesize#3}%
@@ -775,8 +794,8 @@
 % |                <italic author>                   |
 % |                <journal>                         |
 \newcommand{\cvpubitem}[4]{%
-	\parbox[t]{0.17\textwidth}{\raggedright #4} &
-	\parbox[t]{0.81\textwidth}{%
+	\parbox[t]{\datecolwidth}{\raggedright #4} &
+	\parbox[t]{0.98\textwidth-\datecolwidth}{%
 		\textbf{#1} \par \textit{#2} \par #3 \vspace{\parsep}%
 	}\\
 }
