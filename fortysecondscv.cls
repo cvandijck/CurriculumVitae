@@ -761,8 +761,8 @@
 % |                <italic-title>
 % |                <longer description>              |
 \newcommand{\cvitemlong}[5]{%
-	\parbox[t]{0.17\textwidth}{\raggedright #1} &%
-	\parbox[t]{0.81\textwidth}{%
+	\parbox[t]{\datecolwidth}{\raggedright #1} &%
+	\parbox[t]{0.98\textwidth-\datecolwidth}{%
 		\parbox[t]{\linewidth-\widthof{\footnotesize #4}-1em}{\raggedright \textbf{#2}}%
 		\hfill {\footnotesize#4} \\%
 		\textcolor{itemtextcolor}{\textit{#3}} \\%\vspace{\parsep}%

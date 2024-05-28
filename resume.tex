@@ -46,6 +46,7 @@
 	% logospace=5mm,
 	% logoposition=before,
 	% sidebarplacement=right,
+	% datecolwidth=0.22\textwidth,
 ]{fortysecondscv}
 
 % fine tune line spacing
@@ -153,12 +154,12 @@
 \addtofrontsidebar{
 	% include gosquare national flags from https://github.com/gosquared/flags;
 	% naming according to ISO 3166-1 alpha-2 country codes
-	\graphicspath{{pics/flags/shiny/}}
-	
+	\graphicspath{{pics/gosquared-flags/flags/flags-iso/shiny/64}}
+
 	\vspace*{\firstsidespacing}%
 	\sidesection{About Me}
 	\aboutme{
-		Passionate about finding \emph{meaningful} innovation in a complex reality. Driven by continuous \emph{self-development}. Loves collaborating with \emph{inspired} people. 
+		Passionate about finding \emph{meaningful} innovation in a complex reality. Driven by continuous \emph{self-development}. Loves collaborating with \emph{inspired} people.
 	}
 
 	% \vfill
@@ -186,13 +187,13 @@
 		\skill{\faExclamationCircle}{Critical analytical thinker}
 		\skill{\faUsers}{Team leader}
 		\skill{\faComments}{Clear communicator}
-		
+
 	\vspace*{\firstsidespacing}
 	\sidesection{Languages}
 	\pointskill{\flag{NL.png}}{Dutch}{5}
 	\pointskill{\flag{GB.png}}{English}{4}
-	\pointskill{\flag{FR.png}}{French}{1}
-	
+	\pointskill{\flag{FR.png}}{French}{2}
+
 	\vspace*{\firstsidespacing}
 }
 
@@ -214,23 +215,27 @@
 	\pointskill{\includegraphics[align=c, width=1em]{pics/other/cpp_dsg.pdf}}{C++}{3}
 	\pointskill{\includegraphics[align=c, width=1em]{pics/other/qt_dsg.pdf}}{Qt}{3}
 	\pointskill{\includegraphics[align=c, width=1em]{pics/other/cmake_dsg.pdf}}{CMake}{2}
-		
+
 	\vspace*{\secondsidespacing}
 	\sidesection{Computational Libraries}
 	\pointskill[-1.6em]{}{NumPy / SciPy}{5}
-	\pointskill[-1.6em]{}{ITK}{4}
-	\pointskill[-1.6em]{}{VTK}{4}
+	\pointskill[-1.6em]{}{ITK / VTK}{4}
 	\pointskill[-1.6em]{}{Pandas}{3}
-	\pointskill[-1.6em]{}{TensorFlow / scikit-learn}{2}
-	
+	\pointskill[-1.6em]{}{Scikit-learn}{3}
+	\pointskill[-1.6em]{}{LangChain}{3}
+	\pointskill[-1.6em]{}{OpenCV}{3}
+	\pointskill[-1.6em]{}{TensorFlow}{3}
+
 	\vspace*{\secondsidespacing}
 	\sidesection{Other}
-	\pointskill[-1.6em]{}{Jupyter}{4}
-	\pointskill[-1.6em]{}{Azure DevOps}{3}
+	% \pointskill[-1.6em]{}{Jupyter}{4}
+	\pointskill[-1.6em]{}{Azure DevOps}{4}
+	\pointskill[-1.6em]{}{Azure Services}{3}
+	\pointskill[-1.6em]{}{Docker}{3}
 	\pointskill[-1.6em]{}{Web Development}{2}
-	\pointskill[-1.6em]{}{\LaTeX}{4}
-	\pointskill[-1.6em]{}{MS Office}{5}
-	
+	% \pointskill[-1.6em]{}{\LaTeX}{4}
+	% \pointskill[-1.6em]{}{MS Office}{5}
+
 	\vspace*{\secondsidespacing}
 	\sidesection{When I'm not working}
 	\aboutme{
@@ -238,9 +243,9 @@
 	}
 
 	\vspace*{8cm}
-	
+
 	\textcolor{maincolor}{References available upon request}
-	
+
 }
 
 
@@ -251,26 +256,28 @@
 
 \makefrontsidebar
 \newlength{\firstpagespacing}
-\setlength{\firstpagespacing}{4ex}
+\setlength{\firstpagespacing}{2ex}
 
 \vspace{\firstpagespacing}
-\cvsection{Working Experience}
+\cvsection{Work Experience}
 \vspace*{-1ex}
 \begin{cvtable}[3.5]
-	\cvitemlong{\emph{current} \\ Jan 2020}{Research Coordinator \& Team Leader}{Cranio-Maxillofacial Surgery}{Materialise NV}%
+	\cvitemlong{\emph{current} \newline Dec 2023}{Competence Center Lead}{Computer Vision}{Sopra Steria}%
+	{Consultancy in Computer Vision, Natural Language Processing and Data Science; responsible for the dissimination of technical expertise within OptimAI Practice and the creation and management of Solution Assets}
+	\cvitemlong{Dec 2023 \newline Jan 2020}{Research Coordinator \& Team Leader}{Cranio-Maxillofacial Surgery}{Materialise NV}%
 	{Own software innovation roadmap of CMF portfolio: lead team of senior researchers; define (externally funded) research proposals; manage collaboration projects with external (clinical) partners}
-	\cvitemlong{Feb 2021 \\ Nov 2018}{Research Team Leader}{Data-driven and Algorithmic Research}{Materialise NV}%
+	\cvitemlong{Feb 2021 \newline Nov 2018}{Research Team Leader}{Data-driven and Algorithmic Research}{Materialise NV}%
 	{People management of junior and senior researchers specialized in machine/deep learning, computational geometry, shape modeling and augmented reality}
-	\cvitem{Nov 2018 \\ Jul 2013}{Research Engineer}{Materialise NV}%
+	\cvitem{Nov 2018 \newline Jul 2013}{Research Engineer}{Materialise NV}
 	{Software research in medical image processing and computational geometry to support Materialise's preoperative planning solutions}
-	\cvitem{Summer 2012}{Internship}{University Hospital Antwerp \\ \hspace*{\fill} Molecular Imaging Center Antwerp}%
-	{Maintenance and repair of medical devices of the intensive care unit; co-design calibration protocol using Fluke Patient Simulator; design of experimental set-up for deep brain stimulation using LabVIEW}
+	\cvitem{Summer 2012}{Internship}{University Hospital Antwerp \\ \hspace*{\fill} Molecular Imaging Center Antwerp}
+	{Maintenance and repair of medical devices of the intensive care unit; co-design calibration protocol using Fluke Patient Simulator; design of experimental set-up for deep brain stimulation}
 \end{cvtable}
 
 \vspace{\firstpagespacing}
 \cvsection{Education}
 \vspace*{-1ex}
-\begin{cvtable}[3.5]	
+\begin{cvtable}[3.5]
 	\cvitemlong{2014 -- 2021}{PhD in Biomechanical Engineering}{Mass Personalisation of Preoperative Planning for TKA}{KU Leuven}
 	{Investigated the use of statistical shape models to predict patient-specific information to support mass personalisation of preoperative planning for total knee arthroplasty}
 	\cvitemlong{2011 -- 2013}{MSc in Biomedical Engineering}{3D Registration of MRI and US Brain Images in Premature Infants}{University Ghent - VUB Brussels}
@@ -282,17 +289,17 @@
 \vspace{\firstpagespacing}
 \cvsection{Continuous Self-Development}
 \vspace*{2ex}
-\begin{cvtable}[1.2]	
+\begin{cvtable}[1.2]
 	\cvitem{2023}{Change Management}{Materialise - Lector}{}
 	\cvitem{2021 - 2022}{Agile Research \& Development}{Materialise}{}
 	\cvitem{2019 - 2020}{Management Development Program}{Materialise - Synerguy}{}
 	\cvitem{2017}{Functional Management}{Materialise - Synerguy}{}
 	\cvitem{2017}{Effective Communication}{Materialise - BeTalent}{}
-	\cvitem{2016}{Machine Learning}{Coursera - Stanford University}{}
-	\cvitem{2015}{Academic Writing}{KU Leuven}{}
-	\cvitem{2014}{Musculoskeletal Modelling by Multibody Dynamics}{Aalborg University}{}
+	% \cvitem{2016}{Machine Learning}{Coursera - Stanford University}{}
+	% \cvitem{2015}{Academic Writing}{KU Leuven}{}
+	% \cvitem{2014}{Musculoskeletal Modelling by Multibody Dynamics}{Aalborg University}{}
 	\cvitem{2014}{Design of Experiments}{Materialise - Amelior}{}
-	\cvitem{2013}{Experimental Design}{KU Leuven}{}
+	% \cvitem{2013}{Experimental Design}{KU Leuven}{}
 \end{cvtable}
 \vspace{\firstpagespacing}
 
@@ -311,19 +318,19 @@
 \vspace*{-1ex}
 \footnotesize{
 \begin{cvtable}[1.5]
-	\cvitemshort{2017 - \emph{current}}{Co-defined and drafted several research project proposals on artificial intelligence and augmented reality at several national funding instruments including the VLAIO Baekeland PhD and Research project programs, and the imec.icon program}
-	\cvitemshort{2015 - 2019}{Collaborated on X-ray-based preoperative planning for TKA and THA: 2D-to-3D shape extrapolation research, executing cadaver feasibility studies and supporting regulatory validation}
+	\cvitemshort{2017 - 2023}{Co-defined and drafted several research project proposals on artificial intelligence and augmented reality at several national funding instruments including the VLAIO Baekeland PhD and Research project programs, and the imec.icon program}
+	% \cvitemshort{2015 - 2019}{Collaborated on X-ray-based preoperative planning for TKA and THA: 2D-to-3D shape extrapolation research, executing cadaver feasibility studies and supporting regulatory validation}
 	\cvitemshort{2014 - 2018}{Doctoral research (VLAIO Baekeland) on predictive applications of statistical shape modelling for several preoperative planning solutions offered by Materialise}
 \end{cvtable}
 }
 
 \cvsubsection{Software R\&D}
-\vspace*{-1ex}	
+\vspace*{-1ex}
 \footnotesize{
 \begin{cvtable}[1.5]
-	\cvitemshort{2021 - \emph{current}}{Responsible for Python-Based Applications: release of production-ready python applications into internal processes or cloud-environments}
-	\cvitemshort{2018 - \emph{current}}{Responsible for DevOps infrastructure of the internal medical research library: testing, packaging and release management in Azure}
-	\cvitemshort{2016 - \emph{current}}{Created and maintained the internal medical research library building on scientific computing, (medical) image processing and visualisation libraries including numpy, scipy, TensorFlow, and custom builds of ITK and VTK}
+	% \cvitemshort{2021 - 2023}{Responsible for Python-Based Applications: release of production-ready python applications into internal processes or cloud-environments}
+	\cvitemshort{2018 - 2023}{Responsible for DevOps infrastructure of the internal medical research libraries and applications: testing, packaging and release management in Azure}
+	\cvitemshort{2016 - 2023}{Created and maintained the internal medical research library building on scientific computing, (medical) image processing and visualisation libraries including numpy, scipy, TensorFlow, and custom builds of ITK and VTK}
 \end{cvtable}
 }
 
@@ -331,9 +338,9 @@
 \vspace*{-1ex}
 \footnotesize{
 \begin{cvtable}[1.5]
-	\cvitemshort{2022 - \emph{current}}{Leading senior researchers in the software innovation team focusing on preoperative planning and implant design for the cranio-maxillofacial market}
+	\cvitemshort{2020 - 2023}{Leading senior researchers in the software innovation team focusing on preoperative planning and implant design for the cranio-maxillofacial market}
 	\cvitemshort{2016 - 2021}{Evolved from functional to people management of junior and senior researchers working on data-driven (machine and deep learning) and algorithmic research. Provided technical guidance and supported personal development in both hard and soft skills}
-	\cvitemshort{2017 - \emph{current}}{Train the medical research team on python programming and software research using coding challenges and proof-of-concept days}
+	% \cvitemshort{2017 - \emph{current}}{Train the medical research team on python programming and software research using coding challenges and proof-of-concept days}
 \end{cvtable}
 }
 
@@ -341,8 +348,8 @@
 \vspace*{-1ex}
 \footnotesize{
 	\begin{cvtable}[1.5]
-		\cvitemshort{2021 - \emph{current}}{Project lead of imec.icon project: \emph{\href{https://www.imec-int.com/en/research-portfolio/aim}{AIM - Automated Intraoperative Measurements for AR-Guided Surgery}}}
-		\cvitemshort{2018 - \emph{current}}{Project coordination of 4 -- 10 concurrent internal and external research projects within the CMF portfolio. Define scope and frequently align with stakeholders (software development, process and clinical engineering teams)}
+		\cvitemshort{2021 - 2023}{Project lead of imec.icon project: \emph{\href{https://www.imec-int.com/en/research-portfolio/aim}{AIM - Automated Intraoperative Measurements for AR-Guided Surgery}}}
+		\cvitemshort{2018 - 2023}{Project coordination of 4 -- 10 concurrent internal and external research projects within the CMF portfolio. Define scope and frequently align with stakeholders (software development, process and clinical engineering teams)}
 	\end{cvtable}
 }
 
@@ -350,8 +357,8 @@
 \vspace{\secondpagespacing}
 \cvsection{Main Publications and Presentations}
 \vspace*{1ex}
+\footnotesize{
 \begin{itemize}[leftmargin=*, label={}, itemsep=4pt]
-	\footnotesize
 	\item \bibentry{VanDijck2014}
 	\item \bibentry{VanDijck2015b}
 	\item \bibentry{VanDijck2015}
@@ -362,7 +369,7 @@
 	\item \bibentry{Plessers2020}
 	\item \bibentry{Lambrechts2023}
 \end{itemize}
-
+}
 %\cvsubsection{Publications in International Peer Reviewed Journals}
 %\begin{itemize}[leftmargin=*, label={}]
 %	\footnotesize
@@ -382,9 +389,9 @@
 %	\item \bibentry{VanDijck2015c}
 %\end{itemize}
 %
-\cvsubsection{Patents}
+\cvsection{Patents}
 \begin{itemize}[leftmargin=*, label={}]
-	\footnotesize
+	% \footnotesize
 	\item \bibentry{Wirix-Speetjens2018}
 	\item \bibentry{Slagmolen2020}
 	\item \bibentry{Bartels2022}
