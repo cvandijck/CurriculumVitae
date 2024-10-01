@@ -113,6 +113,9 @@
 
 \usepackage{enumitem}
 
+\newcommand{\companyreference}[1]{\emph{\scriptsize #1}}
+
+
 %-------------------------------------------------------------------------------
 %                            PERSONAL INFORMATION
 %-------------------------------------------------------------------------------
@@ -120,7 +123,7 @@
 % your name
 \cvname{\LARGE Christophe Van Dijck}
 % job title/career
-\cvjobtitle{Biomedical Engineer,\\[0.2em] Software R\&D Engineer}
+\cvjobtitle{Biomedical Engineer,\\[0.2em] Software R\&D Engineer,\\[0.2em] Team Lead}
 
 %% optional information
 % profile picture
@@ -239,10 +242,14 @@
 	\vspace*{\secondsidespacing}
 	\sidesection{When I'm not working}
 	\aboutme{
-		As a new father, most of my time is spent taking care of my two sons. In my scarce spare time, you can find me in the climbing hall or playing mini-football. Recently, I have been taking my first steps in web development. Soon, I hope to pick up older -- more time-consuming -- hobbies again, such as woodworking or tinkering with Arduino and Raspberry Pis.
+		As a new father, most of my time is spent taking care of my two sons.
+		In my scarce spare time, you can find me in the climbing hall or playing mini-football.
+		Recently, I have been taking my first steps in web development.
+		Soon, I hope to pick up some older -- more time-consuming -- hobbies again,
+		such as woodworking or tinkering with Arduino and Raspberry Pis.
 	}
 
-	\vspace*{8cm}
+	\vspace*{5cm}
 
 	\textcolor{maincolor}{References available upon request}
 
@@ -262,16 +269,18 @@
 \cvsection{Work Experience}
 \vspace*{-1ex}
 \begin{cvtable}[3.5]
-	\cvitemlong{\emph{current} \newline Dec 2023}{Competence Center Lead}{Computer Vision}{Sopra Steria}%
-	{Consultancy in Computer Vision, Natural Language Processing and Data Science; responsible for the dissimination of technical expertise within OptimAI Practice and the creation and management of Solution Assets}
+	\cvitemlong{\emph{current} \newline Jun 2024}{AI Architect}{Smart Search \& Assistance}{Sopra Steria}%
+	{Consultancy in Computer Vision and Natural Language Processing in public and private sector; definition, management and execution of AI-driven development projects; team lead of small to medium sized teams}
+	\cvitemlong{Jun 2024 \newline Dec 2023}{Competence Center Lead}{Computer Vision}{Ordina - Sopra Steria}%
+	{Consultancy in Computer Vision, Natural Language Processing and Data Science; dissemination of technical expertise within OptimAI Practice and the creation and management of Solution Assets}
 	\cvitemlong{Dec 2023 \newline Jan 2020}{Research Coordinator \& Team Leader}{Cranio-Maxillofacial Surgery}{Materialise NV}%
 	{Own software innovation roadmap of CMF portfolio: lead team of senior researchers; define (externally funded) research proposals; manage collaboration projects with external (clinical) partners}
 	\cvitemlong{Feb 2021 \newline Nov 2018}{Research Team Leader}{Data-driven and Algorithmic Research}{Materialise NV}%
 	{People management of junior and senior researchers specialized in machine/deep learning, computational geometry, shape modeling and augmented reality}
 	\cvitem{Nov 2018 \newline Jul 2013}{Research Engineer}{Materialise NV}
 	{Software research in medical image processing and computational geometry to support Materialise's preoperative planning solutions}
-	\cvitem{Summer 2012}{Internship}{University Hospital Antwerp \\ \hspace*{\fill} Molecular Imaging Center Antwerp}
-	{Maintenance and repair of medical devices of the intensive care unit; co-design calibration protocol using Fluke Patient Simulator; design of experimental set-up for deep brain stimulation}
+	% \cvitem{Summer 2012}{Internship}{University Hospital Antwerp \\ \hspace*{\fill} Molecular Imaging Center Antwerp}
+	% {Maintenance and repair of medical devices of the intensive care unit; co-design calibration protocol using Fluke Patient Simulator; design of experimental set-up for deep brain stimulation}
 \end{cvtable}
 
 \vspace{\firstpagespacing}
@@ -318,9 +327,9 @@
 \vspace*{-1ex}
 \footnotesize{
 \begin{cvtable}[1.5]
-	\cvitemshort{2017 - 2023}{Co-defined and drafted several research project proposals on artificial intelligence and augmented reality at several national funding instruments including the VLAIO Baekeland PhD and Research project programs, and the imec.icon program}
+	\cvitemshort{2017 - 2023 \newline \companyreference{Materialise}}{Co-defined and drafted several research project proposals on artificial intelligence and augmented reality at several national funding instruments including the VLAIO Baekeland PhD and Research project programs, and the imec.icon program}
 	% \cvitemshort{2015 - 2019}{Collaborated on X-ray-based preoperative planning for TKA and THA: 2D-to-3D shape extrapolation research, executing cadaver feasibility studies and supporting regulatory validation}
-	\cvitemshort{2014 - 2018}{Doctoral research (VLAIO Baekeland) on predictive applications of statistical shape modelling for several preoperative planning solutions offered by Materialise}
+	\cvitemshort{2014 - 2018 \newline \companyreference{Materialise}}{Doctoral research (VLAIO Baekeland) on predictive applications of statistical shape modelling for several preoperative planning solutions offered by Materialise}
 \end{cvtable}
 }
 
@@ -329,8 +338,9 @@
 \footnotesize{
 \begin{cvtable}[1.5]
 	% \cvitemshort{2021 - 2023}{Responsible for Python-Based Applications: release of production-ready python applications into internal processes or cloud-environments}
-	\cvitemshort{2018 - 2023}{Responsible for DevOps infrastructure of the internal medical research libraries and applications: testing, packaging and release management in Azure}
-	\cvitemshort{2016 - 2023}{Created and maintained the internal medical research library building on scientific computing, (medical) image processing and visualisation libraries including numpy, scipy, TensorFlow, and custom builds of ITK and VTK}
+	\cvitemshort{2023 - \emph{current} \newline \companyreference{Sopra Steria @ UCB}}{Tech lead in digital technology team exploring and productionalising generative AI solutions in pharmaceutical development}
+	\cvitemshort{2018 - 2023 \newline \companyreference{Materialise}}{Responsible for DevOps infrastructure of the internal medical research libraries and applications: testing, packaging and release management in Azure}
+	\cvitemshort{2016 - 2023 \newline \companyreference{Materialise}}{Created and maintained the internal medical research library building on scientific computing, (medical) image processing and visualisation libraries including numpy, scipy, TensorFlow, and custom builds of ITK and VTK}
 \end{cvtable}
 }
 
@@ -338,8 +348,8 @@
 \vspace*{-1ex}
 \footnotesize{
 \begin{cvtable}[1.5]
-	\cvitemshort{2020 - 2023}{Leading senior researchers in the software innovation team focusing on preoperative planning and implant design for the cranio-maxillofacial market}
-	\cvitemshort{2016 - 2021}{Evolved from functional to people management of junior and senior researchers working on data-driven (machine and deep learning) and algorithmic research. Provided technical guidance and supported personal development in both hard and soft skills}
+	\cvitemshort{2020 - 2023 \newline \companyreference{Materialise}}{Leading senior researchers in the software innovation team focusing on preoperative planning and implant design for the cranio-maxillofacial market}
+	\cvitemshort{2016 - 2021 \newline \companyreference{Materialise}}{Functional and people management of junior and senior researchers working on data-driven (machine and deep learning) and algorithmic research. Provided technical guidance and supported personal development in both hard and soft skills}
 	% \cvitemshort{2017 - \emph{current}}{Train the medical research team on python programming and software research using coding challenges and proof-of-concept days}
 \end{cvtable}
 }
@@ -348,8 +358,8 @@
 \vspace*{-1ex}
 \footnotesize{
 	\begin{cvtable}[1.5]
-		\cvitemshort{2021 - 2023}{Project lead of imec.icon project: \emph{\href{https://www.imec-int.com/en/research-portfolio/aim}{AIM - Automated Intraoperative Measurements for AR-Guided Surgery}}}
-		\cvitemshort{2018 - 2023}{Project coordination of 4 -- 10 concurrent internal and external research projects within the CMF portfolio. Define scope and frequently align with stakeholders (software development, process and clinical engineering teams)}
+		\cvitemshort{2021 - 2023 \newline \companyreference{Materialise}}{Project lead of imec.icon project: \emph{\href{https://www.imec-int.com/en/research-portfolio/aim}{AIM - Automated Intraoperative Measurements for AR-Guided Surgery}}}
+		\cvitemshort{2018 - 2023 \newline \companyreference{Materialise}}{Project coordination of 4 -- 10 concurrent internal and external research projects within the CMF portfolio. Define scope and frequently align with stakeholders (software development, process and clinical engineering teams)}
 	\end{cvtable}
 }
 
